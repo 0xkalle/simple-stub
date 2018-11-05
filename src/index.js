@@ -1,19 +1,15 @@
-
 module.exports.createStub = (objectToStub, { renameCalls = 'calls' } = {}) => {
   if (typeof objectToStub !== 'object') {
     throw new Error('Argument to create a stub has to be an object.');
   }
 
-  const stub = {};
-  stub[renameCalls] = {};
-
-  Object.keys(objectToStub).forEach((key) => {
+  return Object.keys(objectToStub).reduce((stub, key) => {
     if (typeof objectToStub[key] !== 'function') {
       // if property value is not a function it is just copied to the stub.
       stub[key] = objectToStub[key];
     } else {
-      stub[renameCalls][key] = [];
       // else it is spied and then add to the stub
+      stub[renameCalls][key] = [];
 
       stub[key] = (...args) => {
         let result = null;
@@ -34,7 +30,7 @@ module.exports.createStub = (objectToStub, { renameCalls = 'calls' } = {}) => {
         return result;
       };
     }
-  });
 
-  return stub;
+    return stub;
+  }, { [renameCalls]: {} });
 };
