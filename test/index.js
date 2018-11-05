@@ -50,6 +50,7 @@ describe('simple-stub', () => {
     stubObj.f(2);
     stubObj.f(3);
 
+    expect(stubObj.calls.f.length).to.equal(3);
     expect(stubObj.calls.f[0].args[0]).to.equal(1);
     expect(stubObj.calls.f[0].result).to.equal(6);
     expect(stubObj.calls.f[1].args[0]).to.equal(2);
