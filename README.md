@@ -4,9 +4,17 @@ To simply make stubs out of simple javascript objects. Use this stubs for testin
 
 ## How to use
 
+Install with:
+
+```shell
+npm i simple-stub --save-dev
+```
+
 To create a stub object, create a object and call `.createStub()` with it as argument.
 
 ```js
+    const simpleStub = require('simple-stub');
+
     const obj = {
       f: a => a + 5,
     };
