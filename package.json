@@ -1,6 +1,6 @@
 {
   "name": "simple-stub",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Converts your object to a stub and saves call details for you.",
   "main": "src/index.js",
   "scripts": {
@@ -14,6 +14,10 @@
     "eslint-plugin-import": "^2.12.0",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/0xkalle/simple-stub.git"
   },
   "author": "Karl-Heinz Wallwitz",
   "license": "MIT"
