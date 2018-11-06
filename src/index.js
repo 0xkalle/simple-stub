@@ -12,8 +12,8 @@ module.exports.createStub = (objectToStub, { renameCalls = 'calls' } = {}) => {
       stub[renameCalls][key] = [];
 
       stub[key] = (...args) => {
-        let result = null;
-        let err = null;
+        let result;
+        let err;
         try {
           result = objectToStub[key](...args);
         } catch (error) {
