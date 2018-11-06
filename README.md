@@ -51,3 +51,26 @@ After you made your calls you can use this data to make your assertions.
 ```
 
 That's it.
+
+## Advanced
+
+If your stub object needs a function named `calls`. You can handover an option object to rename the stub objects build-in `calls` function.
+
+```js
+    const obj = {
+      f: a => a + 5,
+    };
+
+    const stubObj = simpleStub.createStub(obj, {
+      renameCalls: 'myCalls'
+    });
+
+    stubObj.f(1);
+
+    console.log(`Call number is ${stubObj.myCalls.f.length}.`);
+    // Prints: Call number is 1.
+```
+
+## Limitations
+
+* You can not have deeply nested functions yet. Your functions need to be on the top level.
