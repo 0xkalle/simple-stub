@@ -24,9 +24,9 @@ If you now call `stubObj.f(1)` it will behave like `obj.f(1)` and return `6`. Th
 }]
 ```
 
-These "Call-Objects" can be found under the path `stubObj.calls.{function}`.
+These "Call-Objects"-Arrays can be found under the path `stubObj.calls.{function}`.
 
-After you made your calls you can use this data to make your assertions.
+After you made your calls you can use this data to make your assertions with your favorite library:
 
 ```js
   it('calls the function 3 times with 1 2 and 3', () => {
@@ -54,7 +54,7 @@ That's it.
 
 ## Advanced
 
-If your stub object needs a function named `calls`. You can handover an option object to rename the stub objects build-in `calls` function.
+If your stub object needs a function named `calls`. You can provide an options object to rename the stub objects build-in `calls` function.
 
 ```js
     const obj = {
@@ -73,4 +73,15 @@ If your stub object needs a function named `calls`. You can handover an option o
 
 ## Limitations
 
-* You can not have deeply nested functions yet. Your functions need to be on the top level.
+1) You can not have deeply nested functions yet. Your functions need to be on the top level.
+
+```js
+    //will NOT work!
+    const obj = {
+      g: {
+        f: a => a + 5,
+      },
+    };
+    //NOPE!
+    const stubObj = simpleStub.createStub(obj);
+```
