@@ -7,6 +7,12 @@
     "test": "nyc mocha --slow 0 --recursive -t 20000 --exit",
     "lint": "eslint *.js **/*.js"
   },
+  "keywords": [
+    "stub",
+    "testing",
+    "test",
+    "spy"
+  ],
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^4.19.1",
