@@ -1,6 +1,6 @@
 {
   "name": "simple-stub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Converts your object to a stub and saves call details for you.",
   "main": "src/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.12.0",
     "mocha": "^5.2.0",
-    "nyc": "^14.1.1"
+    "nyc": "^15.0.0"
   },
   "repository": {
     "type": "git",
